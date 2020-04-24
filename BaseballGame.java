@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class BaseballGame {
-	public static void main(String args[]) {
 
 	static Scanner input = new Scanner(System.in);
 
@@ -24,7 +23,7 @@ public class BaseballGame {
 		System.out.println();
 
 		//This is where the user will determine the results for each team
-		do { //this loop controls the entire baseball game
+		do {
 			System.out.println("Current score:"); //presents scores
 			System.out.println(team1 + ": " + team1Score);
 			System.out.println(team2 + ": " + team2Score);
@@ -54,7 +53,7 @@ public class BaseballGame {
 					System.out.println(team2 + " is now at bat:" );
 				}
 
-				do { //this code represents the time when one team is at bat
+				do {
 					if(i>4) {
 						i = 0;
 					}
@@ -65,9 +64,9 @@ public class BaseballGame {
 							//These if statements check if the players need to move.
 							if(players[0]<= players[1] && players[1] != 0 && players[0] != 0 && counter[0] == counter[1]) {  //Checks if a player passes the player that bat before them
 								/*
-								 * Since there are only four players, if player 1 (players[0]) scores a point, and bats again (on his second run) when player 2 (players[1]) is still on his first run, the program will think
-								 * player 1 is behind player 2 when he is in fact in front. The counters check to see if the players are still on the same run, and not on different ones. If they are on different runs, then
-								 * the program acknowledges that Player 1 is ahead of Player 2.
+								 * Since there are only four players.
+								 * If player 1 (players[0]) scores a point, and bats again (on his second run) when player 2 (players[1]) is still on his first run, the program will think player 1 is behind player 2 when he is in fact in front.
+								 * The counters check to see if the players are still on the same run, and not on different ones. If they are on different runs, then the program acknowledges that Player 1 is ahead of Player 2
 								 */
 								difference = players[1] - players[0] + 1; //the difference between the two players is checked (remember, the value 1,2,3,4, etc.) is the base the player is at. One is added in case they are on the same base
 								players[0] += difference; //the difference is added to the player who is passed, so they proceed to the base after the player that bats after them
